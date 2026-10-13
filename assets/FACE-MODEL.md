@@ -1,0 +1,7 @@
+The hero uses a front facial surface fitted from `uploads/profile.jpg`, with 478 detected MediaPipe Face Landmarker points. Eye and lip openings are closed, and the upper hair silhouette is extended to follow the portrait. The resulting mesh contains 562 vertices and 1,072 triangles in `shahid-face.json`.
+
+This is an artistic reconstruction from one photograph. It is designed for limited frontal rotation and is not a full scanned head. The prepared model runs locally in the browser; landmark detection is performed only during development.
+
+`face-hero.js` controls the texture, sculpture lighting, wireframe, and particle transition. Native scrolling sets the transition progress; the chapter buttons select views. The eyelids blink by deforming the detected eye contours. Scrolling gradually closes the eyes and adds a smile through mouth-corner and cheek deformation; returning to the top restores the neutral expression. The surface, wireframe, and particles share these deformations. Blink timing varies, with an occasional double blink. Pause and reduced-motion preferences disable autonomous blinking and ambient movement while allowing static expressions selected by scroll. Neutral bright background pixels are excluded at the portrait boundary to prevent pale edge strips. A static portrait remains available when WebGL cannot initialize.
+
+Three.js is vendored under `assets/vendor/` with its MIT license in `THREE-LICENSE.txt`.
